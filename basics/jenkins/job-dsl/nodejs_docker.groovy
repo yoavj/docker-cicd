@@ -8,9 +8,9 @@ job('NodeJS Docker example') {
     triggers {
         scm('H/5 * * * *')
     }
-    wrappers {
-        nodejs('nodejs-new') 
-    }
+//    wrappers {
+//       nodejs('nodejs-new') 
+//    }
     steps {
         dockerBuildAndPublish {
             repositoryName('yoavj/jen')
