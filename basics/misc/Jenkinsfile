@@ -17,8 +17,8 @@ node {
      sh "pwd" 
      sh "ls -l" 
      docker.withRegistry('https://index.docker.io/v1/', '8f632d3f-220a-45fd-9cab-6497f3327c2d') {
-       def app = docker.build("yoavj/jen:${commit_id}", '-f basics/Dockerfile .').push()
-       def app2 = docker.build("yoavj/jen:latest", '-f basics/Dockerfile .').push()
+       def app = docker.build("yoavj/jen:${commit_id}", '-f Dockerfile .').push()
+       def app2 = docker.build("yoavj/jen:latest", '-f Dockerfile .').push()
      }
    }
    stage('docker run') {
